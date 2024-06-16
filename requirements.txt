@@ -1,0 +1,9 @@
+## db
+chromadb==0.5.0
+
+## ai
+torch==2.2.2
+transformers==4.41.2
+bitsandbytes==0.42.0
+
+##
