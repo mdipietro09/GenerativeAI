@@ -4,3 +4,4 @@ __pycache__/
 *cache
 chroma.log
 chroma_data/
+chroma/
