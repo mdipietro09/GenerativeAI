@@ -6,11 +6,13 @@ All the projects are documented on [*Medium*](https://maurodp.medium.com/).
 <br>
 
 - <ins>**[LLM Chatbot](https://github.com/mdipietro09/GenerativeAI/tree/main/Chatbot)**</ins>
-<br>	
-	<p align="center"><img src="_docs/llm.gif" width="450" height="250"></p>
+<br>
+	Build a voice assistant LLM ChatBot on your laptop with Ollama and Speech Recognition.	
+	<p align="center"><img src="_docs/llm.gif" width="350" height="150"></p>
 <br>
 
-- <ins>**[RAG](https://github.com/mdipietro09/GenerativeAI/tree/main/RAG)**</ins>
+- <ins>**[RAG](https://github.com/mdipietro09/GenerativeAI/tree/main/Rag)**</ins>
 <br>
-	<p align="center"><img src="_docs/rag.gif" width="550" height="250"></p>
+	Build your own ChatGPT with multimodal data and run it on your laptop without GPU.
+	<p align="center"><img src="_docs/rag.gif" width="350" height="250"></p>
 <br>
