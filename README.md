@@ -9,7 +9,7 @@ All the projects are documented on [*Medium*](https://maurodp.medium.com/).
 <br>
 	Build a voice assistant LLM ChatBot on your laptop with Ollama and Speech Recognition.
 <br>
-	<p align="center"><img src="_docs/llm.gif" width="450" height="50"></p>
+	<p align="center"><img src="_docs/llm.gif" width="450" height="150"></p>
 <br>
 
 <ins>**[RAG](https://github.com/mdipietro09/GenerativeAI/tree/main/Rag)**</ins>
