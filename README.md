@@ -16,5 +16,5 @@ All the projects are documented on [*Medium*](https://maurodp.medium.com/).
 <br>
 	Build your own ChatGPT with multimodal data and run it on your laptop without GPU.
 <br>
-	<p align="center"><img src="_docs/rag.png" width="850" height="250"></p>
+	<p align="center"><img src="_docs/rag.png" width="700" height="200"></p>
 <br>
