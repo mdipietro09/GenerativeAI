@@ -10,3 +10,7 @@ pytesseract==0.3.10
 
 ## frontend
 streamlit==1.35.0
+
+## speech
+SpeechRecognition==3.10.4
+gTTS==2.5.1

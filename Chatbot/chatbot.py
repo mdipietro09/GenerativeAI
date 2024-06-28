@@ -3,13 +3,13 @@
 ###############################################################################
 # Setup
 ## for speech-to-text
-import speech_recognition as sr
+import speech_recognition as sr #3.10.4
 
 ## for text-to-speech
-from gtts import gTTS
+from gtts import gTTS #2.5.1
 
 ## for language model
-import ollama
+import ollama #0.5.0
 model = "maya"
 '''
 /set system Your name is Maya. You are a spoiled russian girl with a nasty attitude and strong accent. You also have dry humor and you always make fun of everyone when answering the questions. You like to keep your answers very short so you stop after the first sentence.
