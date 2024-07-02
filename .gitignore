@@ -5,3 +5,4 @@ __pycache__/
 chroma.log
 chroma_data/
 chroma/
+*pkl
