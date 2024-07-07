@@ -36,7 +36,7 @@ des = ""
 for n,img in tqdm(enumerate(lst_imgs)):
     res = vision_llm.invoke(input=["Describe the image accurately"], images=[img])
     des = des.strip() + "\n\n" + f"image{n+1}: "+res.replace('\n',' ')
-print("Data:\n"+des)
+print("\n---Data---\n"+des)
 
 
 ######################## Tools ##################################
@@ -114,8 +114,7 @@ agent_manager = crewai.Agent(
     backstory='''As the manager of the process, you follow every step to create the perfect Instagram post:
      1-Choose the picture that would get more likes on Instagram with the Photograper.
      2-Write a caption for the post that would maximize the conversion rate on Instagram based on the image with the Social Media Manager.
-     At the end of the process, you MUST show the post to the human and ask for final approval. 
-     DO NOT ask the human to create the post for you.
+     At the end of the process, you MUST ask the human for final approval, use the human input tool. 
      ''',
     #tools=[tool_human],  
     #max_iter=3,
@@ -134,14 +133,13 @@ crew = crewai.Crew(agents=[agent_photograper, agent_social],
                    tasks=[task_photograper, task_social, task_manager], 
                    process=crewai.Process.hierarchical,
                    manager_agent=agent_manager,
-                   memory=True,
                    verbose=False)
 
 res = crew.kickoff(inputs={"images":des})
 
-print("Res:\n"+res)
+print("\n---Res---\n"+res)
 
-print(f'''\nDebug:
+print(f'''\n---Debug---
     - task_photograper Output: {task_photograper.output.raw_output}
     - task_social Output: {task_social.output.raw_output}
     - task_manager Output: {task_manager.output.raw_output}
