@@ -16,7 +16,6 @@ vision_llm = Ollama(model="llava")
 llm = Ollama(model="phi3")
 
 ## for agents
-#import langchain #0.1.20
 from langchain_community.tools import DuckDuckGoSearchRun ##6.1.7
 from crewai_tools import tool #0.4.0
 import crewai #0.35.0
@@ -49,15 +48,6 @@ def tool_browser(q: str) -> str:
 def tool_instagram(q: str) -> str:
     '''Search Instagram'''
     return DuckDuckGoSearchRun().run(f"site:instagram.com {q}")
-
-from crewai_tools import BaseTool
-class HumanTool(BaseTool):
-    name: str = "Name of my tool"
-    description: str = "Clear description for what this tool is useful for, your agent will need this information to use it."
-    def _run(self, argument: str) -> str:
-        return input("input: ")
-
-tool_human = HumanTool()
 
 def callback_function(output):
     print(f"Task completed: {output.raw_output}")
@@ -123,7 +113,6 @@ agent_manager = crewai.Agent(
      2-Write a caption for the post that would maximize the conversion rate on Instagram based on the image with the Social Media Manager.
      At the end of the process, you MUST ask the human for final approval, use the human input tool. 
      ''',
-    tools=[tool_human],  
     max_iter=3,
     llm=llm,
     allow_delegation=True, verbose=True)
