@@ -50,7 +50,14 @@ def tool_instagram(q: str) -> str:
     '''Search Instagram'''
     return DuckDuckGoSearchRun().run(f"site:instagram.com {q}")
 
-#tool_human = langchain.agents.load_tools(["human"])
+from crewai_tools import BaseTool
+class HumanTool(BaseTool):
+    name: str = "Name of my tool"
+    description: str = "Clear description for what this tool is useful for, your agent will need this information to use it."
+    def _run(self, argument: str) -> str:
+        return input("input: ")
+
+tool_human = HumanTool()
 
 def callback_function(output):
     print(f"Task completed: {output.raw_output}")
@@ -67,10 +74,10 @@ agent_photograper = crewai.Agent(
      make more people interact with the post, and maximize the conversion rate.
      Search about the current season, today's date, any particular events of this month.
      ''',
-    tools=[tool_browser, tool_instagram], 
-    #max_iter=3,
+    tools=[tool_instagram], 
+    max_iter=3,
     llm=llm,
-    allow_delegation=False, verbose=False)
+    allow_delegation=False, verbose=True)
 
 ## Task
 task_photograper = crewai.Task(
@@ -91,10 +98,10 @@ agent_social = crewai.Agent(
      that would get more likes on Instagram, make more people interact with the post, and maximize the conversion rate. 
      Search about trending topics, hashtags and emojis. 
      ''',
-    tools=[tool_browser, tool_instagram], 
-    #max_iter=3,
+    tools=[tool_instagram], 
+    max_iter=3,
     llm=llm,
-    allow_delegation=False, verbose=False)
+    allow_delegation=False, verbose=True)
 
 ## Task
 task_social = crewai.Task(
@@ -116,15 +123,15 @@ agent_manager = crewai.Agent(
      2-Write a caption for the post that would maximize the conversion rate on Instagram based on the image with the Social Media Manager.
      At the end of the process, you MUST ask the human for final approval, use the human input tool. 
      ''',
-    #tools=[tool_human],  
-    #max_iter=3,
-    human_input=True,
+    tools=[tool_human],  
+    max_iter=3,
     llm=llm,
-    allow_delegation=True, verbose=False)
+    allow_delegation=True, verbose=True)
 
 ## Task
 task_manager = crewai.Task(
     description=prompt, agent=agent_manager,
+    human_input=True,
     expected_output='''Best image and short caption, basically the whole Instagram post''')
 
 
@@ -133,7 +140,7 @@ crew = crewai.Crew(agents=[agent_photograper, agent_social],
                    tasks=[task_photograper, task_social, task_manager], 
                    process=crewai.Process.hierarchical,
                    manager_agent=agent_manager,
-                   verbose=False)
+                   verbose=True)
 
 res = crew.kickoff(inputs={"images":des})
 
