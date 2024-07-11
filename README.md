@@ -16,7 +16,7 @@ All the projects are documented on [*Medium*](https://maurodp.medium.com/).
 <br>
 	Create an AI squad to automate literally anything on your laptop without GPU.
 <br>
-	<p align="center"><img src="_docs/agents.png" width="600" height="300"></p>
+	<p align="center"><img src="_docs/agents.png" width="500" height="300"></p>
 <br>
 
 <ins>**[RAG](https://github.com/mdipietro09/GenerativeAI/tree/main/RAG)**</ins>
