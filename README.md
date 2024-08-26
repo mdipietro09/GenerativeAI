@@ -12,7 +12,7 @@ All the projects are documented on [*Medium*](https://maurodp.medium.com/).
 	<p align="center"><img src="_docs/chat.gif" width="500" height="300"></p>
 <br>
 
-<ins>**[Agents](https://github.com/mdipietro09/GenerativeAI/tree/main/Agents)**</ins>
+<ins>**[Agents](https://github.com/mdipietro09/GenerativeAI/tree/main/Agents_WebSearching)**</ins>
 <br>
 	Create an AI squad to automate literally anything on your laptop without GPU.
 <br>
